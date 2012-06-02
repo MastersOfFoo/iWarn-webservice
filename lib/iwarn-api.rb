@@ -19,3 +19,4 @@ require "iwarn-api/controllers/events_controller"
 
 # Serializers
 require "iwarn-api/serializers/event_serializer"
+require "iwarn-api/serializers/array_serializer"
