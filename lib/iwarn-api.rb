@@ -2,6 +2,7 @@ require "nancy/base"
 require "sequel"
 require "rack/protection"
 require "micromachine"
+require "yajl"
 
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
