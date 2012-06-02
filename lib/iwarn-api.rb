@@ -1,6 +1,7 @@
 require "nancy/base"
 require "sequel"
 require "rack/protection"
+require "rack/contrib"
 require "micromachine"
 require "yajl"
 

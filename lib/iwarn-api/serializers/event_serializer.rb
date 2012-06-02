@@ -3,7 +3,7 @@ class EventSerializer
     @event = event
   end
 
-  def to_json(include_root = true)
+  def to_json(include_root = false)
     event_hash = {
       'description' => @event.description,
       'latitude' => @event.latitude,
