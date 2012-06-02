@@ -1,5 +1,6 @@
 require "nancy/base"
 require "sequel"
+require "rack/protection"
 
 # Main app
 require "iwarn-api/app"
@@ -11,4 +12,4 @@ require "iwarn-api/models/event"
 require "iwarn-api/controllers/events_controller"
 
 # Serializers
-require "iwarn-api/controllers/events_serializer"
+require "iwarn-api/controllers/event_serializer"
