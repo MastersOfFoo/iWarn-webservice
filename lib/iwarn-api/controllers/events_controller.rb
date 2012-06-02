@@ -1,5 +1,5 @@
 class IWarnApi
-  # Create a new Event with parameters pased in body
+  # Create a new event with parameters pased in body
   post "/events.json" do
     event_attrs = params["event"]
   end
