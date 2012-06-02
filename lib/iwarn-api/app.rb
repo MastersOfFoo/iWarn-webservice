@@ -1,4 +1,5 @@
 class IWarnApi < Nancy::Base
+  use Rack::Logger
   use Rack::Session::Cookie
   use Rack::Protection
   use Rack::Protection::RemoteReferrer
