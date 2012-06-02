@@ -1,0 +1,21 @@
+CREATE A NEW EVENT
+
+URL: http://iwarn-staging.herokuapp.com/events.json
+
+Method: POST
+
+Accept: application/json
+
+Content-Type: application/json
+
+Body: {"event": {"description": null, "latitude": 70.1, "longitude": 11.0, "state": "registered", "type": "simple"}}
+
+--------------------------------------------------------
+
+GET A EXISTING EVENT
+
+URL: http://iwarn-staging.herokuapp.com/events/1.json
+
+Accept: application/json
+
+Method: GET
