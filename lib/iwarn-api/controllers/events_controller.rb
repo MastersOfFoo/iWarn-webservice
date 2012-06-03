@@ -4,7 +4,7 @@ class IWarnApi
     event = Event.new(params["event"])
     response["Content-Type"] = "application/json"
     if event.save
-      headers = {"Location" => location_for_event(event)}
+      headers = {"Location" => event_url(event)}
       halt 201, headers, EventSerializer.new(event).to_json
     else
       halt 400, "Bad Request"
@@ -13,7 +13,9 @@ class IWarnApi
 
   # Read all existing events from database
   get "/events.json" do
-
+    events = Event.all
+    response["Content-Type"] = "application/json"
+    ArraySerializer.new(events).to_json
   end
 
   # Read the event with the given id
@@ -26,11 +28,16 @@ class IWarnApi
 
   # Update an existing event with the given id
   put "/events/:id.json" do
-    id = params["id"]
-    event_attrs = params["event"]
+    event = Event[params["id"]]
+    halt 404, "not found" unless event
+    if event.update(params["event"])
+      halt 204, EventSerializer.new(event).to_json
+    else
+      halt 400, "Bad Request"
+    end
   end
 
-  def location_for_event(event)
+  def event_url(event)
     "#{request.scheme}://#{request.host}/events/#{event.id}"
   end
 end
