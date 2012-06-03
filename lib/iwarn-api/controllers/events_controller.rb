@@ -13,7 +13,8 @@ class IWarnApi
 
   # Read all existing events from database
   get "/events.json" do
-
+    events = Event.exclude(state: 'closed').all
+    ArraySerializer.new(events).to_json
   end
 
   # Read the event with the given id
