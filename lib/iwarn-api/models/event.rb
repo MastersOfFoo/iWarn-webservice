@@ -1,7 +1,8 @@
 class Event < Sequel::Model
   plugin :timestamps
   plugin :validation_helpers
-
+  one_to_many :photos
+  
   def validate
     validates_presence [:latitude, :longitude, :type, :state]
     validates_includes ["simple", "multiple", "runover"], :type
