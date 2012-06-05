@@ -14,6 +14,7 @@ require "iwarn-api/config"
 # Models
 require "iwarn-api/models/event"
 require "iwarn-api/models/photo"
+require "iwarn-api/models/person"
 
 # Controllers
 require "iwarn-api/controllers/events_controller"
