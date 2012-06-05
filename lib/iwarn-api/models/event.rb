@@ -3,6 +3,7 @@ class Event < Sequel::Model
   plugin :validation_helpers
   one_to_many :photos
   one_to_many :people
+  one_to_many :vehicles
   
   def validate
     validates_presence [:latitude, :longitude, :type, :state]
