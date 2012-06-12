@@ -30,9 +30,10 @@ class IWarnApi
   put "/events/:id.json" do
     event = Event[params["id"]]
     halt 404, "not found" unless event
-    if event.update(params["event"])
+    begin
+      event.update(params["event"])
       halt 204, EventSerializer.new(event).to_json
-    else
+    rescue
       halt 400, "Bad Request"
     end
   end
