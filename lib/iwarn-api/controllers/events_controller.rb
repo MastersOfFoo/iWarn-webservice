@@ -13,7 +13,7 @@ class IWarnApi
 
   # Read all existing events from database
   get "/events.json" do
-    events = Event.exclude(state: 'closed').all
+    events = Event.order(:id.desc).exclude(state: 'closed').all
     response["Content-Type"] = "application/json"
     ArraySerializer.new(events).to_json
   end
