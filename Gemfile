@@ -11,4 +11,6 @@ gem "nancy"
 gem "thin"
 gem "rack-protection"
 gem "rack-contrib"
+
 gem "racksh"
+gem "aws-s3"

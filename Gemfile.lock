@@ -1,9 +1,15 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    aws-s3 (0.6.3)
+      builder
+      mime-types
+      xml-simple
+    builder (3.0.0)
     daemons (1.1.8)
     eventmachine (0.12.10)
     micromachine (1.0.4)
+    mime-types (1.18)
     nancy (0.2.0)
       rack
       tilt
@@ -25,12 +31,14 @@ GEM
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
     tilt (1.3.3)
+    xml-simple (1.1.1)
     yajl-ruby (1.1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-s3
   micromachine
   nancy
   pg

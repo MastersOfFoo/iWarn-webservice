@@ -4,6 +4,7 @@ require "rack/protection"
 require "rack/contrib"
 require "micromachine"
 require "yajl"
+require "aws/s3"
 
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
@@ -23,4 +24,8 @@ require "iwarn-api/controllers/photos_controller"
 
 # Serializers
 require "iwarn-api/serializers/event_serializer"
+require "iwarn-api/serializers/photo_serializer"
 require "iwarn-api/serializers/array_serializer"
+
+# Uploaders
+require "iwarn-api/uploaders/photo_uploader"
