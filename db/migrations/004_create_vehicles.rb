@@ -4,8 +4,8 @@ Sequel.migration do
       primary_key :id
       foreign_key :event_id, :events, :null => false
       String :identification_number, :null => false
-      Integer :driver_id      
-      String :description      
+      Integer :driver_id
+      String :description
       DateTime :created_at
       DateTime :updated_at
     end

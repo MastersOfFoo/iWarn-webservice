@@ -1,13 +1,13 @@
 class IWarnApi
-  # Associate people to an event
-  post "/vehicles/:id/vehicle.json" do
+  # Associate vehicles to an event
+  post "/events/:id/vehicles.json" do
     begin
       event = Event[params["id"]]
       response["Content-Type"] = "application/json"
       halt 404, "not found" unless event
 
-      params["vehicle"].each do |p|
-        vehicle = Vehicle.new(event: event, person_id: p)
+      params["vehicles"].each do |v|
+        vehicle = Vehicle.new(event: event, identification_number: v)
         vehicle.save
       end
 
@@ -17,8 +17,8 @@ class IWarnApi
     end
   end
 
-  # Get all the people associated to an event
-  get "/vehicles/:id/vehicle.json" do
+  # Get all the vehicles associated to an event
+  get "/events/:id/vehicle.json" do
     event = Event[params["id"]]
     response["Content-Type"] = "application/json"
     halt 404, "not found" unless event
