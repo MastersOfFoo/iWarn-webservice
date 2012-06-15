@@ -19,6 +19,7 @@ require "iwarn-api/models/vehicle"
 
 # Controllers
 require "iwarn-api/controllers/events_controller"
+require "iwarn-api/controllers/photos_controller"
 
 # Serializers
 require "iwarn-api/serializers/event_serializer"
