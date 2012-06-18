@@ -4,6 +4,7 @@ require "rack/protection"
 require "rack/contrib"
 require "yajl"
 require "aws/s3"
+require "moonshado-sms"
 
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
@@ -33,3 +34,6 @@ require "iwarn-api/serializers/array_serializer"
 
 # Uploaders
 require "iwarn-api/uploaders/photo_uploader"
+
+# Services
+require "iwarn-api/services/sms_service"
