@@ -4,7 +4,7 @@ Sequel.migration do
       primary_key :id
       foreign_key :event_id, :events, :null => false
       foreign_key :service_id, :services, :null => false
-      String :message, :null => false       
+      String :message, :null => false
       DateTime :created_at
       DateTime :updated_at
     end

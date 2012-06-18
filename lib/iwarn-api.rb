@@ -34,6 +34,7 @@ require "iwarn-api/controllers/event_logs_controller"
 # Serializers
 require "iwarn-api/serializers/event_serializer"
 require "iwarn-api/serializers/photo_serializer"
+require "iwarn-api/serializers/alert_serializer"
 require "iwarn-api/serializers/array_serializer"
 
 # Uploaders
