@@ -3,7 +3,7 @@ class IWarnApi
   post "/events/:id/alerts.json" do
     #begin
       event = Event[params["id"]]
-      service = Event[params["alert"]["service_id"]]
+      service = Service[params["alert"]["service_id"]]
       response["Content-Type"] = "application/json"
       halt 404, "not found" unless event || service
 
