@@ -19,6 +19,6 @@ class Event < Sequel::Model
 
   def after_update
     super
-    EventLog.create(log: "Event ##{self.id} changed", event: self)
+    EventLog.create(log: "Event ##{self.id} #{self.state}", event: self)
   end
 end
