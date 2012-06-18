@@ -6,7 +6,7 @@ class IWarnApi
       service = Service[params["alert"]["service_id"]]
       response["Content-Type"] = "application/json"
       halt 404, "not found" unless event || service
-
+      
       alert = Alert.new(event: event, service: service, message: params["alert"]["message"])
       alert.save
       headers = {"Location" => alert_url(alert, event)}

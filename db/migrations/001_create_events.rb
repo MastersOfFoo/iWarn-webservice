@@ -9,6 +9,7 @@ Sequel.migration do
       DateTime :updated_at
       String :state, :default => "registered"
       String :type, :null => false
+      String :address
     end
   end
 end

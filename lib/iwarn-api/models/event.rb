@@ -16,6 +16,7 @@ class Event < Sequel::Model
   def after_create
     super
     EventLog.create(log: "Event ##{self.id} registered", event: self)
+    google_api = "http://maps.googleapis.com/maps/api/geocode/json?latlng=#{latitude},#{longitude}&sensor=false"  
   end
 
   def after_update
