@@ -7,7 +7,7 @@ class IWarnApi
     response["Content-Type"] = "application/json"
         
     if alert.save
-      headers = {"Location" => event_url(event)}
+      headers = {"Location" => alert_url(alert, event)}
       halt 201, headers, AlertSerializer.new(alert).to_json
     else
       halt 400, "Bad Request"
@@ -20,5 +20,9 @@ class IWarnApi
     response["Content-Type"] = "application/json"
     halt 404, "not found" unless event
     ArraySerializer.new(event.alerts).to_json
+  end
+
+  def alert_url(alert, event)
+    "#{request.scheme}://#{request.host}/events/#{event.id}/alerts/#{alert.id}"
   end
 end
