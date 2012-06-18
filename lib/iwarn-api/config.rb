@@ -9,6 +9,7 @@ S3_KEY = "AKIAJKTZC2AHYR6PIISA"
 S3_SECRET = "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"
 S3_BUCKET = "iwarn-photos"
 
+# Moonshado SMS
 Moonshado::Sms.configure do |config|
   if RACK_ENV == "production"
     config.api_key = ENV['MOONSHADOSMS_URL']
