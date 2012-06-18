@@ -16,12 +16,14 @@ require "iwarn-api/models/event"
 require "iwarn-api/models/photo"
 require "iwarn-api/models/person"
 require "iwarn-api/models/vehicle"
+require "iwarn-api/models/event_log"
 
 # Controllers
 require "iwarn-api/controllers/events_controller"
 require "iwarn-api/controllers/photos_controller"
 require "iwarn-api/controllers/people_controller"
 require "iwarn-api/controllers/vehicles_controller"
+require "iwarn-api/controllers/event_logs_controller"
 
 
 # Serializers
