@@ -8,7 +8,7 @@ class IWarnApi
         
     if alert.save
       headers = {"Location" => event_url(event)}
-      halt 201, headers, EventSerializer.new(event).to_json
+      halt 201, headers, AlertSerializer.new(alert).to_json
     else
       halt 400, "Bad Request"
     end

@@ -5,6 +5,7 @@ class Event < Sequel::Model
   one_to_many :people
   one_to_many :vehicles
   one_to_many :event_logs
+  one_to_many :alerts
 
   def validate
     validates_presence [:latitude, :longitude, :type, :state]
