@@ -4,30 +4,21 @@ class Event < Sequel::Model
   one_to_many :photos
   one_to_many :people
   one_to_many :vehicles
-  
+  one_to_many :event_logs
+
   def validate
     validates_presence [:latitude, :longitude, :type, :state]
     validates_includes ["simple", "multiple", "runover"], :type
+    validates_includes ["registered", "attended", "closed"], :state
   end
 
-  def attend!
-    tracer.trigger(:attend)
+  def after_create
+    super
+    EventLog.create(log: "Event ##{self.id} registered", event: self)
   end
 
-  def close!
-    tracer.trigger(:close)
-  end
-
-  def tracer
-    @tracer ||= begin
-      fsm = MicroMachine.new(self.state || "registered")
-
-      fsm.when(:attend, "registered" => "attended")
-      fsm.when(:close,  "attended"   => "closed")
-
-      fsm.on(:any) { self.state = tracer.state }
-
-      fsm
-    end
+  def after_update
+    super
+    EventLog.create(log: "Event ##{self.id} changed", event: self)
   end
 end

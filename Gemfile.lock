@@ -8,7 +8,6 @@ GEM
     builder (3.0.0)
     daemons (1.1.8)
     eventmachine (0.12.10)
-    micromachine (1.0.4)
     mime-types (1.18)
     nancy (0.2.0)
       rack
@@ -39,7 +38,6 @@ PLATFORMS
 
 DEPENDENCIES
   aws-s3
-  micromachine
   nancy
   pg
   rack-contrib
