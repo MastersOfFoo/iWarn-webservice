@@ -17,3 +17,6 @@ Moonshado::Sms.configure do |config|
     config.production_environment = false
   end
 end
+
+# Google Reverse Geocoding Service
+GOOGLE_GEOCODING_URL = "http://maps.googleapis.com/maps/api/geocode/json?sensor=false"

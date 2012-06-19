@@ -13,10 +13,17 @@ class Event < Sequel::Model
     validates_includes ["registered", "attended", "closed"], :state
   end
 
+  def before_create
+    super
+    lat, lng = self.latitude, self.longitude
+    if lat && lng
+      self.address = ReverseGeocodingService.new(lat, lng).address
+    end
+  end
+
   def after_create
     super
     EventLog.create(log: "Event ##{self.id} registered", event: self)
-    google_api = "http://maps.googleapis.com/maps/api/geocode/json?latlng=#{latitude},#{longitude}&sensor=false"  
   end
 
   def after_update

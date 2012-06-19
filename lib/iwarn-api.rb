@@ -1,3 +1,7 @@
+# Standard libraries
+require "open-uri"
+
+# Gems libraries
 require "nancy/base"
 require "sequel"
 require "rack/protection"
@@ -42,3 +46,4 @@ require "iwarn-api/uploaders/photo_uploader"
 
 # Services
 require "iwarn-api/services/sms_service"
+require "iwarn-api/services/reverse_geocoding_service"
