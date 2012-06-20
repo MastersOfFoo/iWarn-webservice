@@ -1,7 +1,8 @@
 class IWarnApi
   # Create an alert of an Event of the given id
   post "/events/:id/alerts.json" do
-    begin
+    #begin
+      p params      
       event = Event[params["id"]]
       service = Service[params["alert"]["service_id"]]
       response["Content-Type"] = "application/json"
@@ -11,9 +12,9 @@ class IWarnApi
       alert.save
       headers = {"Location" => alert_url(alert, event)}
       halt 201, headers, AlertSerializer.new(alert).to_json
-    rescue
+    #rescue
       halt 400, "Bad Request"
-    end
+    #end
   end
 
   # Get all the alerts from the given id of the event
