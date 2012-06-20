@@ -7,7 +7,7 @@ class ReverseGeocodingService
     begin
       url = open("#{GOOGLE_GEOCODING_URL}&latlng=#{@latitude},#{@longitude}")
       results = Yajl::Parser.new.parse(url.read)
-      return results["results"][0]["formatted_address"]
+      return results["results"][0]["formatted_address"].split(",").first
     rescue
       return ""
     end
