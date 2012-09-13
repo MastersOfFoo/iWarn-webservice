@@ -13,4 +13,4 @@ gem "rack-contrib"
 
 gem "racksh"
 gem "aws-s3"
-gem "moonshado-sms"
+#gem "moonshado-sms"
