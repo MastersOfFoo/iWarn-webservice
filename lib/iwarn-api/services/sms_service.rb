@@ -4,7 +4,7 @@ class SmsService
   end
 
   def deliver
-    sms = Moonshado::Sms.new(@number, @message)
-    sms.deliver_sms
+    #sms = Moonshado::Sms.new(@number, @message)
+    #sms.deliver_sms
   end
 end

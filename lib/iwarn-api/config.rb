@@ -10,13 +10,13 @@ S3_SECRET = "22BJwGIaNUllXBnaISPk/zGMCvjeuEmb0l6bHpYA"
 S3_BUCKET = "iwarn-photos"
 
 # Moonshado SMS
-Moonshado::Sms.configure do |config|
-  if RACK_ENV == "production"
-    config.api_key = ENV['MOONSHADOSMS_URL']
-  else
-    config.production_environment = false
-  end
-end
+#Moonshado::Sms.configure do |config|
+#  if RACK_ENV == "production"
+#    config.api_key = ENV['MOONSHADOSMS_URL']
+#  else
+#    config.production_environment = false
+#  end
+#end
 
 # Google Reverse Geocoding Service
 GOOGLE_GEOCODING_URL = "http://maps.googleapis.com/maps/api/geocode/json?sensor=false"
