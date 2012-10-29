@@ -8,7 +8,7 @@ require "rack/protection"
 require "rack/contrib"
 require "yajl"
 require "aws/s3"
-require "moonshado-sms"
+#require "moonshado-sms"
 
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
