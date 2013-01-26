@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Danilo Garcia", "Guillermo Iguaran"]
   s.email       = ["danilogarcia024@gmail.com", "guilleiguaran@gmail.com"]
-  s.homepage    = "https://github.com/guilleiguaran/fakeredis"
+  s.homepage    = "https://github.com/MastersOfFoo/iWarn-webservice"
   s.summary     = %q{iWarn API}
   s.description = %q{iWarn application API}
 
